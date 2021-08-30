@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find f1tenth_simulator)/launch/simulator.launch"/>
+  
+  <node name="lidar_processor" pkg="chee0134_lab1" type="lidar_processing.py" />
+
+	<node name="record_scan_range" pkg="rosbag" type="record" args="-a -o $(find chee0134_lab1)/bags/bags_2021-08-08-14-01-58 /scan_range" output="screen"/>
+	
+</launch>
